@@ -1,0 +1,21 @@
+public class string {
+
+	public static void main(String[] args) {
+		String temp = "java";
+		System.out.println(temp.charAt(1)); // charAt
+		String temp2 = "java";
+		System.out.println(temp.compareTo(temp2)); // compareTo / 0 : 같음, 0보다 작음 : 작다, 0보다 크다 : 크다
+		String[] tempp = temp.split("a");
+		System.out.println(tempp[0]);
+		
+		String number = "080-335-0020";
+		String[] splitNumber = number.split("-"); // split
+		
+		for(String numTemp : splitNumber)
+			System.out.println(numTemp);
+		
+		
+
+	}
+
+}

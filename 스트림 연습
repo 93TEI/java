@@ -1,0 +1,33 @@
+import java.util.*;
+import java.util.stream.Collectors;
+public class stream {
+
+	public static void main(String[] args) {
+		int[] arr = {1,1,10,30,2};
+		List<Integer> list = new ArrayList<>();
+		Set<Integer> set = new HashSet<>();
+		
+		//Stream을 사용하지 않았을 때
+		for(int i=0; i<arr.length; i++)
+			set.add(arr[i]);
+		
+		Iterator<Integer> iter = set.iterator();
+		
+		for(int i=0; iter.hasNext();i++) {
+			list.add(iter.next());
+		}
+		
+		list.sort(Comparator.reverseOrder());
+		
+		System.out.println("Stream을 사용하지 않았을 때 : "+list.toString());
+		
+		
+		//Stream을 사용했을 때
+		System.out.println("Stream을 사용했을 때 : "+ 
+							Arrays.stream(arr).boxed()
+							.distinct()
+							.sorted(Comparator.reverseOrder())
+							.collect(Collectors.toList()));
+	}
+
+}

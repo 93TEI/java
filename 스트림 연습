@@ -28,6 +28,21 @@ public class stream {
 							.distinct()
 							.sorted(Comparator.reverseOrder())
 							.collect(Collectors.toList()));
-	}
+		
+		//count()
+		System.out.println("count() 크기 확인");
+		System.out.println(Arrays.stream(arr).count());
+		System.out.println(list.stream().count());
+		
+		//sorted()
+		System.out.println("sorted()");
+		System.out.println(Arrays.stream(arr).boxed().sorted().collect(Collectors.toList()));
+		System.out.println(list.stream().sorted().collect(Collectors.toList()));
 
+		//sorted()
+		System.out.println("sorted(Comparator.reverseOrder()) 역정렬");
+		System.out.println(Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+		System.out.println(list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+		
+	}
 }

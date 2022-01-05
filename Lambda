@@ -1,0 +1,28 @@
+package algorithms;
+import java.util.*;
+
+public class lambda {
+
+	public static void main(String[] args) {
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.forEach(val -> System.out.println(val)); // 람다식
+		
+		Map<String, Integer> map = new HashMap<>();
+		map.put("one", 1);
+		map.put("two", 2);
+		map.put("three", 3);
+		
+		//람다식 map 출력
+		map.forEach((name,number) ->
+		{
+			if(number > 2)
+				System.out.println(name + "는 2보다 큰"+number);
+			else
+				System.out.println(name + "는 2보다 크지않은 "+ number);
+		});
+	}
+
+}

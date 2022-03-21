@@ -36,3 +36,6 @@ Predicate<T>
    Stream.of(1.0, 2.0, 3.0) .mapToInt(Double::intValue) .mapToObj(i -> "a" + i)
       
 /*최종연산*/
+   max/min/sum/average/count
+   
+   collect

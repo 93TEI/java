@@ -57,7 +57,7 @@ public class App {
         // 람다식 , mapToInt에서 바로 길이 반환
         mylist.stream().mapToInt(String::length).forEach(x-> System.out.println(x));
 
-        //error
-        st.collect(Collectors.averagingInt(Student::getAge));
+        //Collecters.averagingInt()
+        System.out.println(stdlist.stream().collect(Collectors.averagingInt(Student::getAge)));
     }
 }

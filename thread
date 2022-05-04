@@ -1,0 +1,19 @@
+package algorithms;
+
+class Bread extends Thread {
+
+// 이 클래스에서 상위 클래스인 Thread의 run() 메소드를 재정의를 해야 Thread의 실행부분 작성 가능
+ @Override
+ public void run() {
+     super.run();
+     System.out.println("Bread !");
+ }
+}
+
+public class thread{
+
+ public static void main(String[] args) {
+	 Bread bread = new Bread();
+     bread.start(); // start() 메소드를 호출하면 thread가 실행된다. 여기서 start() 메소드는 쓰레드 객체의 run() 메소드를 호출한다.
+ }
+}

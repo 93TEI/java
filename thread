@@ -1,19 +1,37 @@
-package algorithms;
-
+/*
+ * Thread를 상속받아 구현
+ */
 class Bread extends Thread {
-
-// 이 클래스에서 상위 클래스인 Thread의 run() 메소드를 재정의를 해야 Thread의 실행부분 작성 가능
+// 상속받은 Thread의 run() 메소드를 재정의를 해야 Thread의 실행부분 작성 가능
  @Override
- public void run() {
+ public void run() { // start()가 새로운 Thread가 작업하는데 필요한 호출스택을 생성하는데 run()은 거기에 첫번째로 저장되는 과정
      super.run();
      System.out.println("Bread !");
  }
+}
+
+/*
+ * Runnable 인터페이스로 구현
+ * : 대부분 선호하는 방식인데, 다른 클래스 상속받을 수 있어서이지 않을까
+ */
+class BreadRun implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("Bread-runnable !");
+	}
 }
 
 public class thread{
 
  public static void main(String[] args) {
 	 Bread bread = new Bread();
+     
+     
+     Thread breadRun = new Thread(new BreadRun());
+     System.out.println(breadRun.getId()+", "+breadRun.getName()+", "+breadRun.getPriority()+", "+breadRun.getState());
+     breadRun.setPriority(10); // 우선순위 설정, 범위 : 0~10, 10이 최우선순위
      bread.start(); // start() 메소드를 호출하면 thread가 실행된다. 여기서 start() 메소드는 쓰레드 객체의 run() 메소드를 호출한다.
+     breadRun.start();
+     System.out.println(breadRun.getId()+", "+breadRun.getName()+", "+breadRun.getPriority()+", "+breadRun.getState());
  }
 }

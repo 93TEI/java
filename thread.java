@@ -31,6 +31,7 @@ class Order implements Runnable {
 		makeFood();
 	}
 	
+	//synchronized를 메소드에 걸면 메소드를 포함한 this에 락 걸림, synchronized(객체)는 해당 객체만 락을 걸어 다른 스레드가 접근하지 못하게 함
 	public static synchronized void makeFood() {
 		while(true) {
 			// Order가 들어왔을 때 먼저 들어간 주문의 음식이 나오기 전까지
